@@ -29,6 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+//    sourceSets {
+//        java {
+//            srcDir 'src/java' // 指定源码目录
+//        }
+//    }
 }
 
 dependencies {

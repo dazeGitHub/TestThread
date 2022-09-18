@@ -1,4 +1,4 @@
-package com.zyz.test.tickets;
+package com.zyz.test.tickets.bean;
 
 /**
  * 使用锁

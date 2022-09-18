@@ -1,4 +1,4 @@
-package com.zyz.test.tickets;
+package com.zyz.test.tickets.bean;
 
 import java.util.LinkedList;
 

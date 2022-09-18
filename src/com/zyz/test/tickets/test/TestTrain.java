@@ -1,9 +1,9 @@
 package com.zyz.test.tickets.test;
 
-import com.zyz.test.tickets.bean.Ticket;
-import com.zyz.test.tickets.bean.BookTicket;
-import com.zyz.test.tickets.bean.BookTicket3;
-import com.zyz.test.tickets.bean.BookTicketSyn;
+import com.zyz.test.tickets.thread.Ticket;
+import com.zyz.test.tickets.thread.BookTicket;
+import com.zyz.test.tickets.thread.BookTicket3;
+import com.zyz.test.tickets.thread.BookTicketSyn;
 
 import java.util.LinkedList;
 

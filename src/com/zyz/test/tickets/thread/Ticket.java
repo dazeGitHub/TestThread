@@ -1,4 +1,4 @@
-package com.zyz.test.tickets.bean;
+package com.zyz.test.tickets.thread;
 
 import java.util.Date;
 

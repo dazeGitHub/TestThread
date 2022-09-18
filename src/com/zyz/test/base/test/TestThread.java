@@ -1,7 +1,7 @@
-package com.zyz.test.thread.test;
+package com.zyz.test.base.test;
 
-import com.zyz.test.thread.bean.FirstThread;
-import com.zyz.test.thread.bean.SecondThread;
+import com.zyz.test.base.thread.FirstThread;
+import com.zyz.test.base.thread.SecondThread;
 
 public class TestThread {
 

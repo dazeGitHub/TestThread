@@ -1,5 +1,5 @@
 
-##### DamonThread
+##### 1. DamonThread
 
 Damon 线程一直循环打印, 但是当主线程退出后 Damon 线程也会退出。
 
@@ -27,7 +27,7 @@ Damon 线程一直循环打印, 但是当主线程退出后 Damon 线程也会�
 //************* main thread end ************
 ```
 
-##### StopThreadTest
+##### 2. StopThreadTest
 
 ```java
 //子线程 : Thread-0----- running i = 1
@@ -44,7 +44,7 @@ Damon 线程一直循环打印, 但是当主线程退出后 Damon 线程也会�
 //----- 子线程结束 -----
 ```
 
-##### YieldThread
+##### 3. YieldThread
 
 ###### 注释了 Thread.currentThread( ).yield( );
 
@@ -75,3 +75,20 @@ Damon 线程一直循环打印, 但是当主线程退出后 Damon 线程也会�
 ```
 
 双方线程有更多的机会抢入
+
+##### 4. PriorityThread
+
+```java
+//priority = 10---- thread Id = 30 is starting
+//priority = 10---- thread Id = 26 is starting
+//priority = 1---- thread Id = 27 is starting
+//priority = 1---- thread Id = 29 is starting
+//...
+//priority = 10---- thread Id = 24 is over
+//priority = 10---- thread Id = 20 is over
+//...
+//priority = 1---- thread Id = 23 is over
+//priority = 1---- thread Id = 31 is over
+```
+
+可见 高优先级的线程 先开启 & 先结束, 低优先级的线程 后开启 & 后结束

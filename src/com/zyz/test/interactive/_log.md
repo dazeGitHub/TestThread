@@ -94,3 +94,20 @@
 //Thread id = 32 ------ num = 16 ,实验完毕
 //Thread id = 22 ------ num = 6 ,实验完毕
 ```
+
+##### 5. CountDownLatchTest
+
+```java
+//Thread id = 16 正在等待其他任务完成...
+//Thread id = 20 任务完成
+//Thread id = 26 任务完成
+//Thread id = 18 任务完成
+//Thread id = 23 任务完成
+//Thread id = 24 任务完成
+//Thread id = 22 任务完成
+//Thread id = 17 任务完成
+//Thread id = 19 任务完成
+//Thread id = 21 任务完成
+//Thread id = 25 任务完成
+//Thread id = 16 汽车总装任务完成...
+```

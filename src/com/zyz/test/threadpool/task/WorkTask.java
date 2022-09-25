@@ -1,4 +1,4 @@
-package com.zyz.test.threadpool;
+package com.zyz.test.threadpool.task;
 
 /**
  * 任务类一般叫做 xxTask, 使用线程池运行这个 Task

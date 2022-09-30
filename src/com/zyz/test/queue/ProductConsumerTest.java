@@ -32,6 +32,7 @@ class Producer implements Runnable {
             for(int i = 0; i < 100; i++){
                 queue.put(new Integer(i));
                 System.out.println(Thread.currentThread().getId() + "-- 插入队列 --" + i);
+                Thread.sleep(100);
             }
         } catch (InterruptedException ex) {
             //... handle ...

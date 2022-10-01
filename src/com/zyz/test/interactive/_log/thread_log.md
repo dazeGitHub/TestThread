@@ -73,26 +73,29 @@
 ##### 4. SemaphoreTest
 
 ```java
+//Thread id = 19----- num = 3 开始实验 ........
+//Thread id = 20----- num = 4 开始实验 ........
+//Thread id = 17----- num = 1 开始实验 ........
+//Thread id = 18----- num = 2 开始实验 ........
+//Thread id = 16----- num = 0 开始实验 ........
+//Thread id = 19 ------ num = 3 ,实验完毕
+//Thread id = 23----- num = 7 开始实验 ........
+//Thread id = 17 ------ num = 1 ,实验完毕
+//Thread id = 20 ------ num = 4 ,实验完毕
+//Thread id = 24----- num = 8 开始实验 ........
+//Thread id = 22----- num = 6 开始实验 ........
 //Thread id = 16 ------ num = 0 ,实验完毕
 //Thread id = 18 ------ num = 2 ,实验完毕
-//Thread id = 20 ------ num = 4 ,实验完毕
-//Thread id = 19 ------ num = 3 ,实验完毕
-//Thread id = 17 ------ num = 1 ,实验完毕
-//Thread id = 24 ------ num = 8 ,实验完毕
-//Thread id = 26 ------ num = 10 ,实验完毕
-//Thread id = 21 ------ num = 5 ,实验完毕
-//Thread id = 23 ------ num = 7 ,实验完毕
-//Thread id = 25 ------ num = 9 ,实验完毕
-//Thread id = 28 ------ num = 12 ,实验完毕
-//Thread id = 29 ------ num = 13 ,实验完毕
-//Thread id = 27 ------ num = 11 ,实验完毕
-//Thread id = 31 ------ num = 15 ,实验完毕
-//Thread id = 30 ------ num = 14 ,实验完毕
-//Thread id = 34 ------ num = 18 ,实验完毕
+//
+//Thread id = 33----- num = 17 开始实验 ........
+//Thread id = 34----- num = 18 开始实验 ........
 //Thread id = 35 ------ num = 19 ,实验完毕
+//Thread id = 21----- num = 5 开始实验 ........
+//Thread id = 29 ------ num = 13 ,实验完毕
+//Thread id = 30 ------ num = 14 ,实验完毕
 //Thread id = 33 ------ num = 17 ,实验完毕
-//Thread id = 32 ------ num = 16 ,实验完毕
-//Thread id = 22 ------ num = 6 ,实验完毕
+//Thread id = 34 ------ num = 18 ,实验完毕
+//Thread id = 21 ------ num = 5 ,实验完毕
 ```
 
 ##### 5. CountDownLatchTest

@@ -34,6 +34,7 @@ class StudentTask implements Runnable {
     public void run() {
         try {
             smp.acquire();       //排队等待获取许可证
+            System.out.println("Thread id = " + Thread.currentThread().getId() + "----- num = " + num + " 开始实验 ........");
             //开始做实验
             Thread.sleep(2000);
             System.out.println("Thread id = " + Thread.currentThread().getId() + " ------ num = " + num + " ,实验完毕");

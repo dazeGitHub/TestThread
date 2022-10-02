@@ -1,4 +1,4 @@
-package com.zyz.test.threadpool;
+package com.zyz.test.threadpool.pool;
 
 import com.zyz.test.threadpool.task.WorkTask;
 

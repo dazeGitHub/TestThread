@@ -1,4 +1,4 @@
-package com.zyz.test.threadpool;
+package com.zyz.test.threadpool.executor;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

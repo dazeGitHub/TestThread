@@ -1,9 +1,6 @@
 package com.zyz.test.callable;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class CallableTest {
     public static void main(String[] args) {

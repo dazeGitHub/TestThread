@@ -1,5 +1,6 @@
 package com.zyz.test.AQS;
 
+import java.util.Collections;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
@@ -11,6 +12,9 @@ public class AQS_Test {
         //ReentrantLock
         //CountDownLatch
         //Semaphore
+        //AbstractQueuedSynchronizer
 
+        //Collections.synchronizedMap()
+//        System.arraycopy()
     }
 }

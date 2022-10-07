@@ -14,11 +14,11 @@ class DownloadImgTask(private val imgUrl: String) : Runnable { //Callable<Any?>
                 + " CurThreadName = " + Thread.currentThread().name
         )
         val bitmap = Utils.downloadUrlBitmap(imgUrl)
+        //这样也可以防止图片加载过快, 不过第一张图片会慢 1 秒加载
+        //Thread.sleep(1000)
         mDownloadImgSuccessListener?.invoke(ImageBean().apply {
             this.bitmap = bitmap
             this.url = imgUrl
         })
-        //防止图片加载过快
-        Thread.sleep(1000)
     }
 }

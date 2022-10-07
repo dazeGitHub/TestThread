@@ -11,6 +11,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.testthread.R
 import com.example.testthread.bean.ImageBean
+import com.example.testthread.data.DataCenter
 import com.example.testthread.utils.TLog
 import com.example.testthread.utils.Utils
 import java.io.BufferedInputStream
@@ -21,16 +22,6 @@ import java.net.URL
 
 class HandlerThreadActivity : AppCompatActivity() {
 
-    /**
-     * 图片地址集合
-     */
-    private val url = arrayOf(
-        "https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF",
-        "https://t7.baidu.com/it/u=848096684,3883475370&fm=193&f=GIF",
-        "https://t7.baidu.com/it/u=1415984692,3889465312&fm=193&f=GIF",
-        "https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF",
-        "https://t7.baidu.com/it/u=3691080281,11347921&fm=193&f=GIF",
-    )
     private var imageView: ImageView? = null
     private var handlerThread: HandlerThread? = null
     private var loadImageThread: Thread? = null
@@ -64,7 +55,7 @@ class HandlerThreadActivity : AppCompatActivity() {
     private fun loadByHandlerThread() {
         val callBack: Handler.Callback = loadImageCallBack()
         val handlerThreadHandler = Handler(handlerThread!!.looper, callBack)
-        for (i in url.indices) {
+        for (i in DataCenter.imageUrls.indices) {
             //这里延迟发送消息, 防止图片加载过块
             handlerThreadHandler.sendEmptyMessageDelayed(i, (1000 * i).toLong())
         }
@@ -84,17 +75,17 @@ class HandlerThreadActivity : AppCompatActivity() {
                 while (true) {
                     Thread.sleep(1000)
                     //在子线程中进行网络请求
-                    val bitmap = Utils.downloadUrlBitmap(url[count])
+                    val bitmap = Utils.downloadUrlBitmap(DataCenter.imageUrls[count])
                     val imageBean: ImageBean = ImageBean()
                     imageBean.bitmap = bitmap
-                    imageBean.url = url[count]
+                    imageBean.url = DataCenter.imageUrls[count]
                     val message = Message()
                     message.what = count
                     message.obj = imageBean
                     count++
                     mainThreadHandler.sendMessage(message)
                     //最后一张时停止加载
-                    if (count >= url.size) {
+                    if (count >= DataCenter.imageUrls.size) {
                         loadImageThread!!.interrupt()
                     }
                 }
@@ -112,10 +103,10 @@ class HandlerThreadActivity : AppCompatActivity() {
     internal inner class loadImageCallBack : Handler.Callback {
         override fun handleMessage(msg: Message): Boolean {
             //在子线程中进行网络请求
-            val bitmap = Utils.downloadUrlBitmap(url[msg.what])
+            val bitmap = Utils.downloadUrlBitmap(DataCenter.imageUrls[msg.what])
             val imageBean: ImageBean = ImageBean()
             imageBean.bitmap = bitmap
-            imageBean.url = url[msg.what]
+            imageBean.url = DataCenter.imageUrls[msg.what]
             val message = Message()
             message.what = msg.what
             message.obj = imageBean

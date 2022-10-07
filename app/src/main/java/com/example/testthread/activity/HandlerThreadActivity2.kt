@@ -13,7 +13,13 @@ import com.example.testthread.bean.ImageBean
 import com.example.testthread.data.DataCenter
 import com.example.testthread.utils.TLog
 
-
+/**
+ * 1. handlerThreadHandler 使用 HandlerThread 的 looper 创建 Handler
+ * 2. 创建 runnable 对象, 传入图片 url 和 图片下载成功的接口回调
+ * 3. 循环使用 handlerThreadHandler 调用 post(runnable) 发布任务
+ * 4. 在 HandlerThread 子线程执行 runnable 任务, 如果图片下载成功那么调用接口回调通知 Activity
+ * 5. Activity 的 图片下载成功的接口回调 调用 mainThreadHandler 向主线程发送消息更新 UI
+ */
 class HandlerThreadActivity2 : AppCompatActivity() {
 
     private var imageView: ImageView? = null
@@ -77,8 +83,8 @@ class HandlerThreadActivity2 : AppCompatActivity() {
             }
         }
         //handlerThreadHandler.sendEmptyMessageDelayed(i, (1000 * i).toLong())
-        for(task in taskList){
-            handlerThreadHandler.post(task);
+        for (index in taskList.indices) {
+            handlerThreadHandler.postDelayed(taskList[index], (1000 * index).toLong());
         }
     }
 

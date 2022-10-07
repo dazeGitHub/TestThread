@@ -1,7 +1,5 @@
 package com.example.testthread.activity
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
@@ -14,11 +12,6 @@ import com.example.testthread.bean.ImageBean
 import com.example.testthread.data.DataCenter
 import com.example.testthread.utils.TLog
 import com.example.testthread.utils.Utils
-import java.io.BufferedInputStream
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
-
 
 class HandlerThreadActivity : AppCompatActivity() {
 
